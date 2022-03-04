@@ -1,0 +1,134 @@
+:root {
+  --primary-color: blueviolet;
+  --second-color: aqua;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: aqua;
+  font: 2rem "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    animation: spin 10s infinite alternate linear;
+    font-size: 1.5rem;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateX(-360deg);
+        color: black;
+    }
+    100% {
+        transform: rotateX(360deg);
+        color: violet;
+    }
+}
+
+
+.todo {
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.todo-title {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  box-shadow: 5px 5px 10px black;
+  font-size: 3rem;
+  border-radius: 4px;
+  color: aqua;
+  background-color: var(--primary-color);
+}
+
+.todo-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  width: 100%;
+  height: 60%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 4px;
+}
+
+.todo-item > div {
+  width: 80%;
+}
+
+.todo-item:hover {
+  cursor: pointer;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+  color: var(--second-color);
+}
+
+.todo-item > input[type="text"] {
+  width: 80%;
+  font: inherit;
+}
+
+.todo-item > input[type="button"],
+.todo-item > input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  font: inherit;
+}
+
+.todo-item > input[type="checkbox"]:checked + div {
+  text-decoration: line-through;
+}
+
+.todo-new-item {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 70%;
+  background-color: rgb(94, 255, 255);
+  padding: 10px 0;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 4px;
+  margin: 10px;
+  font: inherit;
+}
+
+.todo-new-item > input {
+  background-color: rgb(94, 255, 255);
+  border: none;
+  width: 80%;
+  outline: none;
+  font: inherit;
+}
+
+.todo-new-item > input::placeholder {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
